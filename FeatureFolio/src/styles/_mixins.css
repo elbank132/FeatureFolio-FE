@@ -1,0 +1,9 @@
+/**
+ * Reusable media queries. Import this file before styles that use them.
+ *
+ * Usage:
+ *   @media (--mobile) { ... }
+ *   @media (--desktop) { ... }
+ */
+@custom-media --mobile (max-width: 767px);
+@custom-media --desktop (min-width: 768px);
