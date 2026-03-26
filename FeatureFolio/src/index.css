@@ -1,2 +1,30 @@
 @import "./styles/_mixins.css";
+@theme {
+  /*
+    Design tokens (Tailwind v4).
+    Mapped to Tailwind color utilities (e.g. `bg-primary`, `text-on-primary`).
+  */
+
+  /* Primitives */
+  /* Navigation bar */
+  --color-primary: #364552;
+  --color-on-primary: #F8F9FA;
+  --color-on-primary-60: rgba(248, 249, 250, 0.6);
+
+  /* App semantics */
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+
+  /* Common UI semantics */
+  /* Dimmed/secondary text */
+  --color-muted-foreground: #44474C;
+  --color-dark-blue: #041627;
+  --color-border: #e5e7eb; /* gray-200 */
+  --color-light-blue-background: #F3F4F5;
+  --color-gold-10: rgba(115, 92, 0, 0.1);
+
+  /* Accent color */
+  --color-gold: #735C00;
+}
+
 @import "tailwindcss";
