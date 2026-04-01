@@ -4,9 +4,7 @@ import { MobileLayout } from './layouts/mobile/MobileLayout'
 
 function App() {
   return (
-    <>
     <MobileLayout />
-    </>
   )
 }
 
