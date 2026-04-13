@@ -1,8 +1,21 @@
+import { useEffect } from "react";
 import { ProfileBadge } from "../../shared/UI/ProfileBadge";
 import { BottomMenu } from "./BottomMenu";
 import { Outlet } from "react-router-dom";
+import { request } from "../../core/api/Request.api";
 
 export const MobileLayout = () => {
+  useEffect(() => {
+    const fetchUser = async() => {
+      await request({
+        method: 'GET',
+        url: 'images/1'
+      })
+    }
+
+    fetchUser();
+  })
+
   return (
     <div className="flex flex-col h-screen bg-background">
       <div className="flex items-center justify-between bg-primary px-6 py-4">
