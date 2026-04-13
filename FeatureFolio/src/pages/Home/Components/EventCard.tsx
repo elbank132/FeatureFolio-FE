@@ -37,7 +37,7 @@ export const EventCard = ({ event }: EventCardProps) => {
     }
 
     return (
-        <div className="max-h-[200px] w-full overflow-hidden rounded-2xl flex justify-start items-end">
+        <div className="max-h-[200px] w-full overflow-hidden rounded-2xl flex justify-start items-end mt-2 mb-2">
             <div className="flex flex-col gap-1.5 absolute bg-[#000]/20 rounded-t-2xl rounded-bl-2xl pl-5 pt-2 pb-2 pr-2">
                 <div className="flex items-center gap-2">
                     <img src="/icons/directory-light.svg" className="h-3 w-3" />

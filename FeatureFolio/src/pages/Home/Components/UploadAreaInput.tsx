@@ -1,11 +1,15 @@
-import { useCallback } from "react";
+import { CreateEventDialog } from "@/shared/dialogs/CreateEventDialog";
+import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
 export const UploadAreaInput = () => {
-    // useCallback prevents the function from being recreated on every render
+    const [createEventOpen, setCreateEventOpen] = useState(false);
+    const [droppedFiles, setDroppedFiles] = useState<File[]>([]);
+
     const onDrop = useCallback((acceptedFiles: File[]) => {
-        console.log('Files uploaded:', acceptedFiles);
-        // Handle your file logic here (e.g., upload to S3 or preview)
+        if (acceptedFiles.length === 0) return;
+        setDroppedFiles(acceptedFiles);
+        setCreateEventOpen(true);
     }, []);
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -17,6 +21,12 @@ export const UploadAreaInput = () => {
     });
 
     return (
+        <>
+        <CreateEventDialog
+            open={createEventOpen}
+            onOpenChange={setCreateEventOpen}
+            files={droppedFiles}
+        />
         <div
             {...getRootProps()}
             className={`border-2 border-dashed rounded-xl p-8 text-center transition-colors cursor-pointer bg-light-blue-background
@@ -40,5 +50,6 @@ export const UploadAreaInput = () => {
                 )}
             </div>
         </div>
+        </>
     );
 };
